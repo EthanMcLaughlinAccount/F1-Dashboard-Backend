@@ -1,0 +1,65 @@
+{
+    "season": 2025,
+    "constructorStandings": [
+        {
+            "pos": 1,
+            "team": "McLaren",
+            "teamKey": "mclaren",
+            "points": 559
+        },
+        {
+            "pos": 2,
+            "team": "Ferrari",
+            "teamKey": "ferrari",
+            "points": 260
+        },
+        {
+            "pos": 3,
+            "team": "Mercedes",
+            "teamKey": "mercedes",
+            "points": 236
+        },
+        {
+            "pos": 4,
+            "team": "Red Bull Racing",
+            "teamKey": "red-bull-racing",
+            "points": 194
+        },
+        {
+            "pos": 5,
+            "team": "Williams",
+            "teamKey": "williams",
+            "points": 70
+        },
+        {
+            "pos": 6,
+            "team": "Aston Martin",
+            "teamKey": "aston-martin",
+            "points": 52
+        },
+        {
+            "pos": 7,
+            "team": "Kick Sauber",
+            "teamKey": "kick-sauber",
+            "points": 51
+        },
+        {
+            "pos": 8,
+            "team": "Racing Bulls",
+            "teamKey": "racing-bulls",
+            "points": 45
+        },
+        {
+            "pos": 9,
+            "team": "Haas",
+            "teamKey": "haas",
+            "points": 35
+        },
+        {
+            "pos": 10,
+            "team": "Alpine",
+            "teamKey": "alpine",
+            "points": 20
+        }
+    ]
+}

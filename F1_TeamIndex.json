@@ -1,0 +1,344 @@
+{
+    "teams": [
+        {
+            "name": "McLaren",
+            "2025_season": {
+                "season_position": 1,
+                "season_points": 559,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 523,
+                    "wins": 11,
+                    "podiums": 24,
+                    "poles": 8,
+                    "top_10s": 27,
+                    "fastest_laps": 9,
+                    "dnfs": 1
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 36,
+                    "wins": 1,
+                    "podiums": 5,
+                    "poles": 1,
+                    "top_10s": 6
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 985,
+                "team_points": 7509.5,
+                "highest_race_finish": "1 (x200)",
+                "podiums": 437,
+                "highest_grid_position": "1 (x172)",
+                "pole_positions": 172,
+                "world_championships": 9
+            }
+        },
+        {
+            "name": "Ferrari",
+            "2025_season": {
+                "season_position": 2,
+                "season_points": 260,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 237,
+                    "wins": 0,
+                    "podiums": 5,
+                    "poles": 1,
+                    "top_10s": 24,
+                    "fastest_laps": 0,
+                    "dnfs": 0
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 23,
+                    "wins": 1,
+                    "podiums": 2,
+                    "poles": 1,
+                    "top_10s": 4
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 1113,
+                "team_points": 10537,
+                "highest_race_finish": "1 (x249)",
+                "podiums": 637,
+                "highest_grid_position": "1 (x254)",
+                "pole_positions": 254,
+                "world_championships": 16
+            }
+        },
+        {
+            "name": "Mercedes",
+            "2025_season": {
+                "season_position": 3,
+                "season_points": 236,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 222,
+                    "wins": 1,
+                    "podiums": 7,
+                    "poles": 1,
+                    "top_10s": 20,
+                    "fastest_laps": 2,
+                    "dnfs": 4
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 14,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 1,
+                    "top_10s": 4
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 319,
+                "team_points": 7926.5,
+                "highest_race_finish": "1 (x121)",
+                "podiums": 197,
+                "highest_grid_position": "1 (x135)",
+                "pole_positions": 134,
+                "world_championships": 8
+            }
+        },
+        {
+            "name": "Red Bull Racing",
+            "2025_season": {
+                "season_position": 4,
+                "season_points": 194,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 177,
+                    "wins": 2,
+                    "podiums": 5,
+                    "poles": 4,
+                    "top_10s": 16,
+                    "fastest_laps": 1,
+                    "dnfs": 3
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 17,
+                    "wins": 1,
+                    "podiums": 2,
+                    "poles": 0,
+                    "top_10s": 3
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 408,
+                "team_points": 8031,
+                "highest_race_finish": "1 (x124)",
+                "podiums": 223,
+                "highest_grid_position": "1 (x107)",
+                "pole_positions": 107,
+                "world_championships": 6
+            }
+        },
+        {
+            "name": "Williams",
+            "2025_season": {
+                "season_position": 5,
+                "season_points": 70,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 67,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 15,
+                    "fastest_laps": 0,
+                    "dnfs": 5
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 3,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 1
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 841,
+                "team_points": 3701,
+                "highest_race_finish": "1 (x114)",
+                "podiums": 243,
+                "highest_grid_position": "1 (x128)",
+                "pole_positions": 128,
+                "world_championships": 9
+            }
+        },
+        {
+            "name": "Aston Martin",
+            "2025_season": {
+                "season_position": 6,
+                "season_points": 52,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 48,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 9,
+                    "fastest_laps": 0,
+                    "dnfs": 3
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 4,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 3
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 142,
+                "team_points": 826,
+                "highest_race_finish": "1 (x1)",
+                "podiums": 12,
+                "highest_grid_position": "1 (x1)",
+                "pole_positions": 1,
+                "world_championships": 0
+            }
+        },
+        {
+            "name": "Kick Sauber",
+            "2025_season": {
+                "season_position": 7,
+                "season_points": 51,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 51,
+                    "wins": 0,
+                    "podiums": 1,
+                    "poles": 0,
+                    "top_10s": 8,
+                    "fastest_laps": 0,
+                    "dnfs": 3
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 0,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 2
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 605,
+                "team_points": 1069,
+                "highest_race_finish": "1 (x1)",
+                "podiums": 27,
+                "highest_grid_position": "1 (x1)",
+                "pole_positions": 1,
+                "world_championships": 0
+            }
+        },
+        {
+            "name": "Racing Bulls",
+            "2025_season": {
+                "season_position": 8,
+                "season_points": 45,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 41,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 9,
+                    "fastest_laps": 0,
+                    "dnfs": 4
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 4,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 4
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 389,
+                "team_points": 900,
+                "highest_race_finish": "1 (x2)",
+                "podiums": 5,
+                "highest_grid_position": "1 (x1)",
+                "pole_positions": 1,
+                "world_championships": 0
+            }
+        },
+        {
+            "name": "Haas",
+            "2025_season": {
+                "season_position": 9,
+                "season_points": 35,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 29,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 8,
+                    "fastest_laps": 0,
+                    "dnfs": 3
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 6,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 2
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 204,
+                "team_points": 342,
+                "highest_race_finish": "4 (x1)",
+                "podiums": 0,
+                "highest_grid_position": "4 (x1)",
+                "pole_positions": 1,
+                "world_championships": 0
+            }
+        },
+        {
+            "name": "Alpine",
+            "2025_season": {
+                "season_position": 10,
+                "season_points": 20,
+                "grand_prix": {
+                    "races": 14,
+                    "points": 19,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 4,
+                    "fastest_laps": 0,
+                    "dnfs": 4
+                },
+                "sprint": {
+                    "races": 3,
+                    "points": 1,
+                    "wins": 0,
+                    "podiums": 0,
+                    "poles": 0,
+                    "top_10s": 1
+                }
+            },
+            "team_summary": {
+                "grand_prix_entered": 382,
+                "team_points": 1998,
+                "highest_race_finish": "1 (x21)",
+                "podiums": 60,
+                "highest_grid_position": "1 (x20)",
+                "pole_positions": 20,
+                "world_championships": 2
+            }
+        }
+    ]
+}

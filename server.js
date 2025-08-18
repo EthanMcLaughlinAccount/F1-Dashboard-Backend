@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import fs from "fs";
+import crypto from "crypto";
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -17,12 +18,12 @@ function loadJSON(file, fallback) {
   }
 }
 
-// ---------- Load data (all from repo root) ----------
+// ---------- Load data (root) ----------
 const driversDB       = loadJSON("F1_Drivers.json",   { season: null, drivers: [] });
 const constructorsDB  = loadJSON("F1_Teams.json",     { season: null, constructorStandings: [] });
 const teamIndexDB     = loadJSON("F1_TeamIndex.json", { teams: [] });
 
-// ---------- Normalizations / indexes ----------
+// ---------- Normalizations ----------
 const drivers = Array.isArray(driversDB.drivers) ? driversDB.drivers : [];
 const byDriverSlug = new Map(drivers.map(d => [String(d.slug || "").toLowerCase(), d]));
 
@@ -43,6 +44,18 @@ const byConstructorKey = new Map(
   constructors.map(c => [String(c.teamKey || "").toLowerCase(), c])
 );
 
+// ---------- Helpers ----------
+function sendJSON(res, obj) {
+  const body = JSON.stringify(obj);
+  const etag = crypto.createHash("md5").update(body).digest("hex");
+
+  res.setHeader("ETag", etag);
+  if (res.req.headers["if-none-match"] === etag) {
+    return res.status(304).end();
+  }
+  res.status(200).send(body);
+}
+
 // ---------- App setup ----------
 app.disable("x-powered-by");
 app.use(morgan("tiny"));
@@ -55,24 +68,24 @@ app.use((_, res, next) => {
 
 // ---------- Root / status ----------
 app.get("/", (req, res) => {
-  res.status(200).send(JSON.stringify({
+  sendJSON(res, {
     ok: !!drivers.length,
     name: "f1-api",
     season: driversDB.season || constructorsDB.season || 2025,
     counts: { drivers: drivers.length, constructors: constructors.length, teams: teamsWithKey.length },
     endpoints: [
       "/api/drivers", "/api/drivers/:slug", "/api/standings",
-      "/api/constructors", "/api/constructors/:teamKey",
+      "/api/constructors", "/api/constructors/:teamKey", "/api/constructors/standings",
       "/api/teams", "/api/teams/:teamKey", "/api/teams/summary"
     ]
-  }));
+  });
 });
 
 app.get("/status", (req, res) => {
-  res.status(200).send(JSON.stringify({ ok: true, ts: new Date().toISOString() }));
+  sendJSON(res, { ok: true, ts: new Date().toISOString() });
 });
 
-// ---------- Drivers (existing) ----------
+// ---------- Drivers ----------
 app.get("/api/drivers", (req, res) => {
   let list = drivers.slice();
   const { team, minPoints, maxPoints } = req.query;
@@ -81,14 +94,14 @@ app.get("/api/drivers", (req, res) => {
   if (minPoints != null) list = list.filter(d => Number(d.points) >= Number(minPoints));
   if (maxPoints != null) list = list.filter(d => Number(d.points) <= Number(maxPoints));
 
-  res.status(200).send(JSON.stringify(list));
+  sendJSON(res, list);
 });
 
 app.get("/api/drivers/:slug", (req, res) => {
   const slug = String(req.params.slug || "").toLowerCase();
   const d = byDriverSlug.get(slug);
-  if (!d) return res.status(404).send(JSON.stringify({ error: "Driver not found", slug }));
-  res.status(200).send(JSON.stringify(d));
+  if (!d) return sendJSON(res.status(404), { error: "Driver not found", slug });
+  sendJSON(res, d);
 });
 
 app.get("/api/standings", (req, res) => {
@@ -98,10 +111,10 @@ app.get("/api/standings", (req, res) => {
     .map(({ pos, driver, slug, nationality, team, teamKey, points }) => ({
       pos, driver, slug, nationality, team, teamKey, points
     }));
-  res.status(200).send(JSON.stringify({ season: driversDB.season, standings: table }));
+  sendJSON(res, { season: driversDB.season, standings: table });
 });
 
-// ---------- Constructors (from F1_Teams.json) ----------
+// ---------- Constructors ----------
 app.get("/api/constructors", (req, res) => {
   const { minPoints, maxPoints } = req.query;
   let list = constructors.slice();
@@ -111,20 +124,22 @@ app.get("/api/constructors", (req, res) => {
 
   list.sort((a, b) => Number(a.pos ?? 999) - Number(b.pos ?? 999));
 
-  res.status(200).send(JSON.stringify({
-    season: constructorsDB.season,
-    constructors: list
-  }));
+  sendJSON(res, { season: constructorsDB.season, constructors: list });
+});
+
+// alias -> /standings
+app.get("/api/constructors/standings", (req, res) => {
+  res.redirect(307, "/api/constructors");
 });
 
 app.get("/api/constructors/:teamKey", (req, res) => {
   const key = String(req.params.teamKey || "").toLowerCase();
   const row = byConstructorKey.get(key);
-  if (!row) return res.status(404).send(JSON.stringify({ error: "Constructor not found", teamKey: key }));
-  res.status(200).send(JSON.stringify(row));
+  if (!row) return sendJSON(res.status(404), { error: "Constructor not found", teamKey: key });
+  sendJSON(res, row);
 });
 
-// ---------- Teams full index (from F1_TeamIndex.json) ----------
+// ---------- Teams ----------
 app.get("/api/teams", (req, res) => {
   const { q } = req.query;
   let list = teamsWithKey.slice();
@@ -137,17 +152,14 @@ app.get("/api/teams", (req, res) => {
     );
   }
 
-  res.status(200).send(JSON.stringify({
-    season: 2025,
-    teams: list
-  }));
+  sendJSON(res, { season: 2025, teams: list });
 });
 
 app.get("/api/teams/:teamKey", (req, res) => {
   const key = String(req.params.teamKey || "").toLowerCase();
   const t = byTeamKeyFull.get(key);
-  if (!t) return res.status(404).send(JSON.stringify({ error: "Team not found", teamKey: key }));
-  res.status(200).send(JSON.stringify(t));
+  if (!t) return sendJSON(res.status(404), { error: "Team not found", teamKey: key });
+  sendJSON(res, t);
 });
 
 app.get("/api/teams/summary", (req, res) => {
@@ -158,12 +170,12 @@ app.get("/api/teams/summary", (req, res) => {
     season_points: t["2025_season"]?.season_points ?? null,
   })).sort((a, b) => Number(a.season_position ?? 999) - Number(b.season_position ?? 999));
 
-  res.status(200).send(JSON.stringify({ season: 2025, teams: rows }));
+  sendJSON(res, { season: 2025, teams: rows });
 });
 
 // ---------- 404 ----------
 app.use((req, res) => {
-  res.status(404).send(JSON.stringify({ error: "Not found" }));
+  sendJSON(res.status(404), { error: "Not found" });
 });
 
 // ---------- Start ----------

@@ -1,0 +1,114 @@
+[
+  {
+    "GrandPrix": "Australia",
+    "Date": "16 Mar",
+    "Winner": "Lando Norris",
+    "Team": "McLaren",
+    "Laps": 57,
+    "Time": "1:42:06.304"
+  },
+  {
+    "GrandPrix": "China",
+    "Date": "23 Mar",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 56,
+    "Time": "1:30:55.026"
+  },
+  {
+    "GrandPrix": "Japan",
+    "Date": "06 Apr",
+    "Winner": "Max Verstappen",
+    "Team": "Red Bull Racing",
+    "Laps": 53,
+    "Time": "1:22:06.983"
+  },
+  {
+    "GrandPrix": "Bahrain",
+    "Date": "13 Apr",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 57,
+    "Time": "1:35:39.435"
+  },
+  {
+    "GrandPrix": "Saudi Arabia",
+    "Date": "20 Apr",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 50,
+    "Time": "1:21:06.758"
+  },
+  {
+    "GrandPrix": "Miami",
+    "Date": "04 May",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 57,
+    "Time": "1:28:51.587"
+  },
+  {
+    "GrandPrix": "Emilia-Romagna",
+    "Date": "18 May",
+    "Winner": "Max Verstappen",
+    "Team": "Red Bull Racing",
+    "Laps": 63,
+    "Time": "1:31:33.199"
+  },
+  {
+    "GrandPrix": "Monaco",
+    "Date": "25 May",
+    "Winner": "Lando Norris",
+    "Team": "McLaren",
+    "Laps": 78,
+    "Time": "1:40:33.843"
+  },
+  {
+    "GrandPrix": "Spain",
+    "Date": "01 Jun",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 66,
+    "Time": "1:32:57.375"
+  },
+  {
+    "GrandPrix": "Canada",
+    "Date": "15 Jun",
+    "Winner": "George Russell",
+    "Team": "Mercedes",
+    "Laps": 70,
+    "Time": "1:31:52.688"
+  },
+  {
+    "GrandPrix": "Austria",
+    "Date": "29 Jun",
+    "Winner": "Lando Norris",
+    "Team": "McLaren",
+    "Laps": 70,
+    "Time": "1:23:47.693"
+  },
+  {
+    "GrandPrix": "Great Britain",
+    "Date": "06 Jul",
+    "Winner": "Lando Norris",
+    "Team": "McLaren",
+    "Laps": 52,
+    "Time": "1:37:15.735"
+  },
+  {
+    "GrandPrix": "Belgium",
+    "Date": "27 Jul",
+    "Winner": "Oscar Piastri",
+    "Team": "McLaren",
+    "Laps": 44,
+    "Time": "1:25:22.601"
+  },
+  {
+    "GrandPrix": "Hungary",
+    "Date": "03 Aug",
+    "Winner": "Lando Norris",
+    "Team": "McLaren",
+    "Laps": 70,
+    "Time": "1:35:21.231"
+  }
+]
